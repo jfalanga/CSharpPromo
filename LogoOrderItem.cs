@@ -36,6 +36,7 @@ namespace CSharpPromo
             set
             {
                 _LogoOrNo = value;
+                Calc();
             }
         }
 
@@ -102,6 +103,7 @@ namespace CSharpPromo
                 {
                     _ColorNumberOf = 0;
                 }
+                Calc();
             }
             
         }
@@ -121,7 +123,7 @@ namespace CSharpPromo
                 {
                     _ItemNumber = 0;
                 }
-
+                Calc();
             }
         }
 
@@ -134,6 +136,7 @@ namespace CSharpPromo
             {
 
                 _Text = value;
+                Calc();
             }
         }
 
