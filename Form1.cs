@@ -46,7 +46,7 @@ namespace CSharpPromo
             LogoOrderItem item = new LogoOrderItem();
             item.NumItems = 10;
             item.NumColors = 10;
-            decimal d=
+            decimal d = item.tPrice;
         }
 
         private void TxtCoffee_TextChanged(object sender, EventArgs e)
