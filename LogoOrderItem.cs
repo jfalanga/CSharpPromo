@@ -13,6 +13,19 @@ namespace CSharpPromo
         private int _ColorNumberOf;
         private int _ItemNumber;
         private string _Text;
+        private decimal _tPrice;
+
+        public decimal tPrice
+        {
+            private set
+            {
+                _tPrice = value;
+            }
+            get
+            {
+                return _tPrice;
+            }
+        }
 
         public bool HasLogo
         {
@@ -30,13 +43,50 @@ namespace CSharpPromo
         {
             set
             {
-                _ItemType = value;
+                _ItemType = "mug";
+                string tValue = value.ToLower();
+                if (tValue=="pen"||tValue=="usb drive")
+                {
+                    _ItemType = value;
+                }
+                Calc();
             } 
             get
             {
                 return _ItemType;
             }
         }
+
+        private void Calc()
+        {
+            
+            decimal indPrice = 0;
+            string tType = ItemType.ToUpper();
+            switch (ItemType)
+            {
+                case "MUGS":
+                    indPrice = 3.5M;
+                    break;
+                case "USB DRIVE":
+                    indPrice = 4M;
+                    break;
+                case "PENS":
+                    indPrice = 1M;
+                    break;
+
+                default:
+                    throw new Exception("There is an item type, other than mugs, pens, or usb drive- this prgram doesn't have the code for that!");
+            }
+            if (Text!="") { indPrice += .05M; }
+            indPrice = indPrice + ((decimal)NumColors * .03M);
+            if (HasLogo)
+            {
+                indPrice += .1M;
+            }
+            tPrice = indPrice * NumItems;
+        }
+
+        
 
         public int NumColors
         {
@@ -48,12 +98,14 @@ namespace CSharpPromo
             set
             {
                 _ColorNumberOf = value;
-                if (value<0)
+                if (value<0||!HasLogo)
                 {
                     _ColorNumberOf = 0;
                 }
             }
+            
         }
+
 
         public int NumItems
         {
@@ -73,6 +125,22 @@ namespace CSharpPromo
             }
         }
 
+        public string Text
+        {
+            get
+            {
+                return _Text;
+            } set
+            {
+
+                _Text = value;
+            }
+        }
+
+        public int ItemID
+        {
+            get;set;
+        }
 
     }
 }
