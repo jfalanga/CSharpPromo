@@ -62,6 +62,7 @@ namespace CSharpPromo
         {
             
             decimal indPrice = 0;
+            //try 
             string tType = ItemType.ToUpper();
             switch (ItemType)
             {
