@@ -14,6 +14,29 @@ namespace CSharpPromo
         private int _ItemNumber;
         private string _Text;
         private decimal _tPrice;
+        private bool isConstr;
+
+        public LogoOrderItem(int iId, string iType,int nClr, int nItem, bool logo, string tText)
+        {
+            isConstr = true;
+            ItemID = iId;ItemType = iType;NumColors = nClr;
+            NumItems = nItem; HasLogo = logo; 
+
+            isConstr = false; Text = tText;
+        }
+
+
+        public LogoOrderItem() : this(-1, "goof", 0, 0, false, "")
+        {
+            
+        }
+
+
+        public LogoOrderItem(bool LogoOrNo, string tText) :this()
+        {
+            HasLogo = LogoOrNo;
+            Text = tText;
+        }
 
         public decimal tPrice
         {
@@ -44,7 +67,7 @@ namespace CSharpPromo
         {
             set
             {
-                _ItemType = "mug";
+                _ItemType = "mug";          //this way "mug" is genuinely the default value
                 string tValue = value.ToLower();
                 if (tValue=="pen"||tValue=="usb drive")
                 {
@@ -60,13 +83,16 @@ namespace CSharpPromo
 
         private void Calc()
         {
-            
+            if (isConstr)
+            {
+                return;
+            }
             decimal indPrice = 0;
             //try 
             string tType = ItemType.ToUpper();
-            switch (ItemType)
+            switch (tType)
             {
-                case "MUGS":
+                case "MUG":
                     indPrice = 3.5M;
                     break;
                 case "USB DRIVE":

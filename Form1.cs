@@ -43,10 +43,7 @@ namespace CSharpPromo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LogoOrderItem item = new LogoOrderItem();
-            item.NumItems = 10;
-            item.NumColors = 10;
-            decimal d = item.tPrice;
+            LogoOrderItem l = new LogoOrderItem();
         }
 
         private void TxtCoffee_TextChanged(object sender, EventArgs e)
