@@ -16,11 +16,11 @@ namespace CSharpPromo
         private decimal _tPrice;
         private bool isConstr;
 
-        public LogoOrderItem(int iId, string iType,int nClr, int nItem, bool logo, string tText)
+        public LogoOrderItem(int iId, string iType, int nClr, int nItem, bool logo, string tText)
         {
             isConstr = true;
-            ItemID = iId;ItemType = iType;NumColors = nClr;
-            NumItems = nItem; HasLogo = logo; 
+            ItemID = iId; ItemType = iType; NumColors = nClr;
+            NumItems = nItem; HasLogo = logo;
 
             isConstr = false; Text = tText;
         }
@@ -28,11 +28,11 @@ namespace CSharpPromo
 
         public LogoOrderItem() : this(-1, "goof", 0, 0, false, "")
         {
-            
+
         }
 
 
-        public LogoOrderItem(bool LogoOrNo, string tText) :this()
+        public LogoOrderItem(bool LogoOrNo, string tText) : this()
         {
             HasLogo = LogoOrNo;
             Text = tText;
@@ -69,12 +69,12 @@ namespace CSharpPromo
             {
                 _ItemType = "mug";          //this way "mug" is genuinely the default value
                 string tValue = value.ToLower();
-                if (tValue=="pen"||tValue=="usb drive")
+                if (tValue == "pen" || tValue == "usb drive")
                 {
                     _ItemType = value;
                 }
                 Calc();
-            } 
+            }
             get
             {
                 return _ItemType;
@@ -105,7 +105,7 @@ namespace CSharpPromo
                 default:
                     throw new Exception("There is an item type, other than mugs, pens, or usb drive- this prgram doesn't have the code for that!");
             }
-            if (Text!="") { indPrice += .05M; }
+            if (Text != "") { indPrice += .05M; }
             indPrice = indPrice + ((decimal)NumColors * .03M);
             if (HasLogo)
             {
@@ -114,7 +114,7 @@ namespace CSharpPromo
             tPrice = indPrice * NumItems;
         }
 
-        
+
 
         public int NumColors
         {
@@ -126,13 +126,17 @@ namespace CSharpPromo
             set
             {
                 _ColorNumberOf = value;
-                if (value<0||!HasLogo)
+                if (value < 0 || !HasLogo)
                 {
                     _ColorNumberOf = 0;
                 }
+                else if (value < 1 && HasLogo)
+                {
+                    _ColorNumberOf = 1;
+                }
                 Calc();
             }
-            
+
         }
 
 
@@ -141,12 +145,14 @@ namespace CSharpPromo
             get
             {
                 return _ItemNumber;
-            } set
+            }
+            set
             {
                 if (value > 0)
                 {
                     _ItemNumber = value;
-                } else
+                }
+                else
                 {
                     _ItemNumber = 0;
                 }
@@ -159,7 +165,8 @@ namespace CSharpPromo
             get
             {
                 return _Text;
-            } set
+            }
+            set
             {
 
                 _Text = value;
@@ -169,8 +176,22 @@ namespace CSharpPromo
 
         public int ItemID
         {
-            get;set;
+            get; set;
         }
 
+        public string GetOrderSummary()
+        {
+            string maybe = "";
+            if (HasLogo)
+            {
+                maybe = "a " + NumColors + " color logo, and ";
+            }
+            string tText = "no text on it";
+            if (Text!="")
+            {
+                tText = "the following text: " + Text;
+            }
+            return String.Format("Order number {0}: {1} with {2}{3}. {4} of them, so the price is: {5}", ItemID, ItemType, maybe, tText, NumItems, tPrice);
+        }
     }
 }

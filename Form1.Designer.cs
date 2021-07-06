@@ -29,108 +29,201 @@ namespace CSharpPromo
         /// </summary>
         private void InitializeComponent()
         {
-            this.ChkPens = new System.Windows.Forms.CheckBox();
-            this.TxtPens = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RadMug = new System.Windows.Forms.RadioButton();
+            this.RadUSB = new System.Windows.Forms.RadioButton();
+            this.RadPen = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtUSB = new System.Windows.Forms.TextBox();
-            this.ChkUSB = new System.Windows.Forms.CheckBox();
-            this.TxtCoffee = new System.Windows.Forms.TextBox();
-            this.ChkCoffee = new System.Windows.Forms.CheckBox();
+            this.TxtOrdNum = new System.Windows.Forms.TextBox();
+            this.TxtINum = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblText = new System.Windows.Forms.Label();
+            this.TxtText = new System.Windows.Forms.TextBox();
+            this.TxtSummery = new System.Windows.Forms.TextBox();
+            this.ChkLogo = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BtnClear = new System.Windows.Forms.Button();
+            this.TxtNumColor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ChkPens
+            // groupBox1
             // 
-            this.ChkPens.AutoSize = true;
-            this.ChkPens.Location = new System.Drawing.Point(34, 49);
-            this.ChkPens.Name = "ChkPens";
-            this.ChkPens.Size = new System.Drawing.Size(60, 24);
-            this.ChkPens.TabIndex = 0;
-            this.ChkPens.Text = "Pens";
-            this.ChkPens.UseVisualStyleBackColor = true;
-            this.ChkPens.CheckedChanged += new System.EventHandler(this.ChkChanged);
+            this.groupBox1.Controls.Add(this.RadMug);
+            this.groupBox1.Controls.Add(this.RadUSB);
+            this.groupBox1.Controls.Add(this.RadPen);
+            this.groupBox1.Location = new System.Drawing.Point(218, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(165, 126);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Item Type:";
             // 
-            // TxtPens
+            // RadMug
             // 
-            this.TxtPens.Enabled = false;
-            this.TxtPens.Location = new System.Drawing.Point(156, 47);
-            this.TxtPens.Name = "TxtPens";
-            this.TxtPens.Size = new System.Drawing.Size(66, 27);
-            this.TxtPens.TabIndex = 1;
-            this.TxtPens.Text = "0";
-            this.TxtPens.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TxtPens.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.RadMug.AutoSize = true;
+            this.RadMug.Checked = true;
+            this.RadMug.Location = new System.Drawing.Point(27, 56);
+            this.RadMug.Name = "RadMug";
+            this.RadMug.Size = new System.Drawing.Size(66, 24);
+            this.RadMug.TabIndex = 2;
+            this.RadMug.TabStop = true;
+            this.RadMug.Text = "Mugs";
+            this.RadMug.UseVisualStyleBackColor = true;
+            this.RadMug.CheckedChanged += new System.EventHandler(this.RadMug_CheckedChanged);
+            // 
+            // RadUSB
+            // 
+            this.RadUSB.AutoSize = true;
+            this.RadUSB.Location = new System.Drawing.Point(45, 86);
+            this.RadUSB.Name = "RadUSB";
+            this.RadUSB.Size = new System.Drawing.Size(112, 24);
+            this.RadUSB.TabIndex = 1;
+            this.RadUSB.Text = "USB Devices";
+            this.RadUSB.UseVisualStyleBackColor = true;
+            this.RadUSB.CheckedChanged += new System.EventHandler(this.RadUSB_CheckedChanged);
+            // 
+            // RadPen
+            // 
+            this.RadPen.AutoSize = true;
+            this.RadPen.Location = new System.Drawing.Point(6, 26);
+            this.RadPen.Name = "RadPen";
+            this.RadPen.Size = new System.Drawing.Size(59, 24);
+            this.RadPen.TabIndex = 0;
+            this.RadPen.Text = "Pens";
+            this.RadPen.UseVisualStyleBackColor = true;
+            this.RadPen.CheckedChanged += new System.EventHandler(this.RadPen_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 24);
+            this.label1.Location = new System.Drawing.Point(0, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Number of Items:";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Order Number:";
             // 
-            // TxtUSB
+            // TxtOrdNum
             // 
-            this.TxtUSB.Enabled = false;
-            this.TxtUSB.Location = new System.Drawing.Point(156, 80);
-            this.TxtUSB.Name = "TxtUSB";
-            this.TxtUSB.Size = new System.Drawing.Size(66, 27);
-            this.TxtUSB.TabIndex = 4;
-            this.TxtUSB.Text = "0";
-            this.TxtUSB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TxtUSB.TextChanged += new System.EventHandler(this.TxtUSB_TextChanged);
+            this.TxtOrdNum.Location = new System.Drawing.Point(109, 12);
+            this.TxtOrdNum.Name = "TxtOrdNum";
+            this.TxtOrdNum.Size = new System.Drawing.Size(79, 27);
+            this.TxtOrdNum.TabIndex = 2;
+            this.TxtOrdNum.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // ChkUSB
+            // TxtINum
             // 
-            this.ChkUSB.AutoSize = true;
-            this.ChkUSB.Location = new System.Drawing.Point(34, 82);
-            this.ChkUSB.Name = "ChkUSB";
-            this.ChkUSB.Size = new System.Drawing.Size(113, 24);
-            this.ChkUSB.TabIndex = 3;
-            this.ChkUSB.Text = "USB Devices";
-            this.ChkUSB.UseVisualStyleBackColor = true;
-            this.ChkUSB.CheckedChanged += new System.EventHandler(this.ChkChanged);
+            this.TxtINum.Location = new System.Drawing.Point(109, 54);
+            this.TxtINum.Name = "TxtINum";
+            this.TxtINum.Size = new System.Drawing.Size(79, 27);
+            this.TxtINum.TabIndex = 4;
+            this.TxtINum.TextChanged += new System.EventHandler(this.TxtINum_TextChanged_1);
             // 
-            // TxtCoffee
+            // label2
             // 
-            this.TxtCoffee.Enabled = false;
-            this.TxtCoffee.Location = new System.Drawing.Point(156, 113);
-            this.TxtCoffee.Name = "TxtCoffee";
-            this.TxtCoffee.Size = new System.Drawing.Size(66, 27);
-            this.TxtCoffee.TabIndex = 6;
-            this.TxtCoffee.Text = "0";
-            this.TxtCoffee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TxtCoffee.UseWaitCursor = true;
-            this.TxtCoffee.TextChanged += new System.EventHandler(this.TxtCoffee_TextChanged);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Item amount:";
             // 
-            // ChkCoffee
+            // LblText
             // 
-            this.ChkCoffee.AutoSize = true;
-            this.ChkCoffee.Location = new System.Drawing.Point(34, 115);
-            this.ChkCoffee.Name = "ChkCoffee";
-            this.ChkCoffee.Size = new System.Drawing.Size(115, 24);
-            this.ChkCoffee.TabIndex = 5;
-            this.ChkCoffee.Text = "Coffee Mugs";
-            this.ChkCoffee.UseVisualStyleBackColor = true;
-            this.ChkCoffee.CheckedChanged += new System.EventHandler(this.ChkCanged);
-            this.ChkCoffee.CheckStateChanged += new System.EventHandler(this.ChkCanged);
-            this.ChkCoffee.TextChanged += new System.EventHandler(this.ChkChanged);
+            this.LblText.AutoSize = true;
+            this.LblText.Location = new System.Drawing.Point(12, 179);
+            this.LblText.Name = "LblText";
+            this.LblText.Size = new System.Drawing.Size(169, 20);
+            this.LblText.TabIndex = 5;
+            this.LblText.Text = "Text to put on the mugs:";
+            // 
+            // TxtText
+            // 
+            this.TxtText.Location = new System.Drawing.Point(12, 202);
+            this.TxtText.Multiline = true;
+            this.TxtText.Name = "TxtText";
+            this.TxtText.Size = new System.Drawing.Size(184, 68);
+            this.TxtText.TabIndex = 6;
+            // 
+            // TxtSummery
+            // 
+            this.TxtSummery.Location = new System.Drawing.Point(12, 293);
+            this.TxtSummery.Multiline = true;
+            this.TxtSummery.Name = "TxtSummery";
+            this.TxtSummery.ReadOnly = true;
+            this.TxtSummery.Size = new System.Drawing.Size(371, 72);
+            this.TxtSummery.TabIndex = 8;
+            // 
+            // ChkLogo
+            // 
+            this.ChkLogo.AutoSize = true;
+            this.ChkLogo.Location = new System.Drawing.Point(7, 96);
+            this.ChkLogo.Name = "ChkLogo";
+            this.ChkLogo.Size = new System.Drawing.Size(181, 24);
+            this.ChkLogo.TabIndex = 9;
+            this.ChkLogo.Text = "Shall they have Logos?";
+            this.ChkLogo.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(245, 201);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Submit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // BtnClear
+            // 
+            this.BtnClear.Location = new System.Drawing.Point(245, 241);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(94, 29);
+            this.BtnClear.TabIndex = 11;
+            this.BtnClear.Text = "Clear";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            // 
+            // TxtNumColor
+            // 
+            this.TxtNumColor.Location = new System.Drawing.Point(109, 126);
+            this.TxtNumColor.Name = "TxtNumColor";
+            this.TxtNumColor.Size = new System.Drawing.Size(79, 27);
+            this.TxtNumColor.TabIndex = 13;
+            this.TxtNumColor.TextChanged += new System.EventHandler(this.TxtNumColor_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(0, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Item amount:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 315);
-            this.Controls.Add(this.TxtCoffee);
-            this.Controls.Add(this.ChkCoffee);
-            this.Controls.Add(this.TxtUSB);
-            this.Controls.Add(this.ChkUSB);
+            this.ClientSize = new System.Drawing.Size(395, 377);
+            this.Controls.Add(this.TxtNumColor);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BtnClear);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ChkLogo);
+            this.Controls.Add(this.TxtSummery);
+            this.Controls.Add(this.TxtText);
+            this.Controls.Add(this.LblText);
+            this.Controls.Add(this.TxtINum);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TxtOrdNum);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TxtPens);
-            this.Controls.Add(this.ChkPens);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Cost of C# Promotional Items";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,13 +231,22 @@ namespace CSharpPromo
 
         #endregion
 
-        private System.Windows.Forms.CheckBox ChkPens;
-        private System.Windows.Forms.TextBox TxtPens;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton RadMug;
+        private System.Windows.Forms.RadioButton RadUSB;
+        private System.Windows.Forms.RadioButton RadPen;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtUSB;
-        private System.Windows.Forms.CheckBox ChkUSB;
-        private System.Windows.Forms.TextBox TxtCoffee;
-        private System.Windows.Forms.CheckBox ChkCoffee;
+        private System.Windows.Forms.TextBox TxtOrdNum;
+        private System.Windows.Forms.TextBox TxtINum;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblText;
+        private System.Windows.Forms.TextBox TxtText;
+        private System.Windows.Forms.TextBox TxtSummery;
+        private System.Windows.Forms.CheckBox ChkLogo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.TextBox TxtNumColor;
+        private System.Windows.Forms.Label label3;
     }
 }
 

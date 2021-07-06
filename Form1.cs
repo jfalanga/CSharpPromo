@@ -29,38 +29,72 @@ namespace CSharpPromo
                 return "";
             }
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            TxtPens.Text = TxtIsNum(ref TxtPens);
-        }
-
-        private void TxtUSB_TextChanged(object sender, EventArgs e)
-        {
-            TxtUSB.Text = TxtIsNum(ref TxtUSB);
-        }
-
         
 
         private void Form1_Load(object sender, EventArgs e)
         {
             LogoOrderItem l = new LogoOrderItem();
+            Text = l.GetOrderSummary();
         }
 
-        private void TxtCoffee_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            TxtCoffee.Text = TxtIsNum(ref TxtCoffee);
+            TxtOrdNum.Text = TxtIsNum(ref TxtOrdNum);
         }
 
-        private void ChkChanged(object sender, EventArgs e)
+        private void TxtINum_TextChanged_1(object sender, EventArgs e)
         {
-            TxtCoffee.Enabled = ChkCoffee.Checked;
-            TxtPens.Enabled = ChkPens.Checked;
-            TxtUSB.Enabled = ChkUSB.Checked;
+            TxtINum.Text = TxtIsNum(ref TxtINum);
         }
 
-        private void ChkCanged(object sender, EventArgs e)
-        {
 
+        private string Labelling(string iType)
+        {
+            return "Text to put on the " + iType + ":";
+        }
+        private void RadMug_CheckedChanged(object sender, EventArgs e)
+        {
+            LblText.Text = Labelling("Mugs");
+        }
+
+        private void RadPen_CheckedChanged(object sender, EventArgs e)
+        {
+            LblText.Text = Labelling("Pens");
+        }
+
+        private void RadUSB_CheckedChanged(object sender, EventArgs e)
+        {
+            LblText.Text = Labelling("USB Devices");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogoOrderItem loi = new LogoOrderItem();
+            loi.Text = TxtText.Text;
+            loi.HasLogo = ChkLogo.Checked;
+            loi.ItemID = Int32.Parse(TxtOrdNum.Text);
+
+        }
+
+        private void TxtNumColor_TextChanged(object sender, EventArgs e)
+        {
+            TxtNumColor.Text = TxtIsNum(ref TxtNumColor);
+
+            int ix;
+            if (TxtNumColor.Text != "")
+            {
+                ix = Int32.Parse(TxtNumColor.Text);
+            } else
+            {
+                ix = 0;
+            }
+            LogoOrderItem temp = new LogoOrderItem();
+            temp.HasLogo = ChkLogo.Checked;
+            temp.NumColors = ix;
+            if (ix!=temp.NumColors)
+            {
+                TxtNumColor.Text = temp.NumColors.ToString();
+            }
         }
     }
 }
