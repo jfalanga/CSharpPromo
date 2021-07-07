@@ -18,15 +18,15 @@ namespace CSharpPromo
 
         public LogoOrderItem(int iId, string iType, int nClr, int nItem, bool logo, string tText)
         {
-            isConstr = true;
+            isConstr = true;        //There are issues if I run the Calc() before I set most of these things
             ItemID = iId; ItemType = iType; NumColors = nClr;
             NumItems = nItem; HasLogo = logo;
 
-            isConstr = false; Text = tText;
+            isConstr = false; Text = tText; //There should be enough set for this to work, now!
         }
 
 
-        public LogoOrderItem() : this(-1, "goof", 0, 0, false, "")
+        public LogoOrderItem() : this(-1, "goof", 0, 0, false, "")      //"mug" is a default value, so this will still be "mug"
         {
 
         }
@@ -126,6 +126,9 @@ namespace CSharpPromo
             set
             {
                 _ColorNumberOf = value;
+                //I don't want a NEGATIVE # of colors; & if there is
+                //no Logo, we don't want ANY colors at all!
+                //no Logo, we don't want ANY colors at all!
                 if (value < 0 || !HasLogo)
                 {
                     _ColorNumberOf = 0;

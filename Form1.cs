@@ -17,7 +17,9 @@ namespace CSharpPromo
             InitializeComponent();
         }
 
-        private string TxtIsNum(ref TextBox txt)
+        //SImple way of making sure that a Textbox's Text is 
+        //an Int.
+        private string TextIsNum(ref TextBox txt)
         {
             int ix;
             string bean = txt.Text;
@@ -26,30 +28,31 @@ namespace CSharpPromo
                 return bean;
             } else
             {
-                return "";
+                return "";      //This both makes writing texts easier, &
+                                //provides an occation for the error handler in Button1
             }
         }
         
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            //Again, easy way to get to the code.
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            TxtOrdNum.Text = TxtIsNum(ref TxtOrdNum);
+            TxtOrdNum.Text = TextIsNum(ref TxtOrdNum);  //This works, astonishingly!
         }
 
         private void TxtINum_TextChanged_1(object sender, EventArgs e)
         {
-            TxtINum.Text = TxtIsNum(ref TxtINum);
+            TxtINum.Text = TextIsNum(ref TxtINum);
         }
 
 
         private string Labelling(string iType)
         {
-            return "Text to put on the " + iType + ":";
+            return "Text to put on the " + iType + ":"; //FAIRLY non-repeating way of doing this!
         }
         private void RadMug_CheckedChanged(object sender, EventArgs e)
         {
@@ -102,7 +105,7 @@ namespace CSharpPromo
 
         private void TxtNumColor_TextChanged(object sender, EventArgs e)
         {
-            TxtNumColor.Text = TxtIsNum(ref TxtNumColor);
+            TxtNumColor.Text = TextIsNum(ref TxtNumColor);
 
             int ix;
             if (TxtNumColor.Text != "")
@@ -112,7 +115,9 @@ namespace CSharpPromo
             {
                 ix = 0;
             }
-            LogoOrderItem temp = new LogoOrderItem();
+            //All this is to make it that there is at least 1 color 
+            //for the logo, & 0 if there is no logo
+            LogoOrderItem temp = new LogoOrderItem();  //for error handlers in LogoOrderItem
             temp.HasLogo = ChkLogo.Checked;
             temp.NumColors = ix;
             if (ix!=temp.NumColors)
