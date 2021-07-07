@@ -33,8 +33,7 @@ namespace CSharpPromo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LogoOrderItem l = new LogoOrderItem();
-            Text = l.GetOrderSummary();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -69,11 +68,36 @@ namespace CSharpPromo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LogoOrderItem loi = new LogoOrderItem();
-            loi.Text = TxtText.Text;
-            loi.HasLogo = ChkLogo.Checked;
-            loi.ItemID = Int32.Parse(TxtOrdNum.Text);
-
+            string whereIssue="The Text to engrave, or the Logo...";
+            try
+            {
+                LogoOrderItem loi = new LogoOrderItem();
+                loi.Text = TxtText.Text;
+                loi.HasLogo = ChkLogo.Checked;
+                whereIssue = "Order Number or the Item type";
+                loi.ItemID = Int32.Parse(TxtOrdNum.Text);
+                if (RadMug.Checked)
+                {
+                    loi.ItemType = "muG";   //Hee hee! I mean mug- that's how it'll work!
+                }
+                else if (RadUSB.Checked)
+                {
+                    loi.ItemType = "USB drive";
+                }
+                else if (RadPen.Checked)
+                {
+                    loi.ItemType = "pEN";
+                }
+                whereIssue = "The Textbox with the number of colors.";
+                loi.NumColors = Int32.Parse(TxtNumColor.Text);
+                whereIssue = "textbox for the number of items:";
+                loi.NumItems = Int32.Parse(TxtINum.Text);
+                TxtSummery.Text = loi.GetOrderSummary();
+            } catch (Exception exc)
+            {
+                TxtSummery.Text = exc.Message+" with (or around) "+whereIssue;
+            }
+            
         }
 
         private void TxtNumColor_TextChanged(object sender, EventArgs e)
@@ -95,6 +119,21 @@ namespace CSharpPromo
             {
                 TxtNumColor.Text = temp.NumColors.ToString();
             }
+        }
+
+        private void ChkLogo_CheckedChanged(object sender, EventArgs e)
+        {
+            TxtNumColor_TextChanged(sender, e);
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            TxtINum.Text = "0";
+            TxtNumColor.Text = "0";
+            TxtOrdNum.Text = "0";
+            TxtSummery.Text = "";
+            TxtText.Text = "";
+            ChkLogo.Checked = false;
         }
     }
 }

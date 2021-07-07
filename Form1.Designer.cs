@@ -78,9 +78,9 @@ namespace CSharpPromo
             this.RadUSB.AutoSize = true;
             this.RadUSB.Location = new System.Drawing.Point(45, 86);
             this.RadUSB.Name = "RadUSB";
-            this.RadUSB.Size = new System.Drawing.Size(112, 24);
+            this.RadUSB.Size = new System.Drawing.Size(96, 24);
             this.RadUSB.TabIndex = 1;
-            this.RadUSB.Text = "USB Devices";
+            this.RadUSB.Text = "USB Drive";
             this.RadUSB.UseVisualStyleBackColor = true;
             this.RadUSB.CheckedChanged += new System.EventHandler(this.RadUSB_CheckedChanged);
             // 
@@ -164,6 +164,7 @@ namespace CSharpPromo
             this.ChkLogo.TabIndex = 9;
             this.ChkLogo.Text = "Shall they have Logos?";
             this.ChkLogo.UseVisualStyleBackColor = true;
+            this.ChkLogo.CheckedChanged += new System.EventHandler(this.ChkLogo_CheckedChanged);
             // 
             // button1
             // 
@@ -183,12 +184,13 @@ namespace CSharpPromo
             this.BtnClear.TabIndex = 11;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // TxtNumColor
             // 
-            this.TxtNumColor.Location = new System.Drawing.Point(109, 126);
+            this.TxtNumColor.Location = new System.Drawing.Point(133, 126);
             this.TxtNumColor.Name = "TxtNumColor";
-            this.TxtNumColor.Size = new System.Drawing.Size(79, 27);
+            this.TxtNumColor.Size = new System.Drawing.Size(63, 27);
             this.TxtNumColor.TabIndex = 13;
             this.TxtNumColor.TextChanged += new System.EventHandler(this.TxtNumColor_TextChanged);
             // 
@@ -197,9 +199,9 @@ namespace CSharpPromo
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(0, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Item amount:";
+            this.label3.Text = "Number of Colors:";
             // 
             // Form1
             // 

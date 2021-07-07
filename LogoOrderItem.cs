@@ -98,7 +98,7 @@ namespace CSharpPromo
                 case "USB DRIVE":
                     indPrice = 4M;
                     break;
-                case "PENS":
+                case "PEN":
                     indPrice = 1M;
                     break;
 
@@ -191,7 +191,7 @@ namespace CSharpPromo
             {
                 tText = "the following text: " + Text;
             }
-            return String.Format("Order number {0}: {1} with {2}{3}. {4} of them, so the price is: {5}", ItemID, ItemType, maybe, tText, NumItems, tPrice);
+            return String.Format("Order number {0}: {1} with {2}{3}. {4} of them, so the price is: ${5}", ItemID, ItemType, maybe, tText, NumItems, tPrice);
         }
     }
 }
